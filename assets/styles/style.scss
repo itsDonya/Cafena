@@ -1,0 +1,84 @@
+@import "./mixins";
+@import "./variables";
+// --------
+
+::selection {
+    color: $black;
+    background-color: white;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+// ----scrollbar----
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $black; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: white; 
+    border-radius: 14px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #eee; 
+}
+
+body {
+    background-color: $black;
+    position: relative;
+}
+
+// ----Header----
+header {
+    @include flex(row, space-between, center);
+    @include sizing(100vw, 80px);
+    background-color: $black;
+    border-bottom: 1px solid #aaaaaa73;
+    padding: 0 6%;
+    position: fixed;
+    .top-menu {
+        width: 36%;
+    }
+
+    ul {
+        @include flex(row, space-between, center);
+        list-style: none;
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            &:hover {
+                color: $main;
+                border-bottom: 1px solid $main;
+                padding-bottom: 6px;
+                transition: all .2s ease-in-out;
+            }
+        }
+    }
+
+    .top-icons {
+        svg {
+            width: 18px;
+            fill: white;
+            &:hover {
+                transition: all .2s ease-in-out;
+                fill: #eee;
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
