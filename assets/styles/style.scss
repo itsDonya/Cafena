@@ -14,6 +14,10 @@
     font-family: sans-serif;
 }
 
+header, #banner {
+    padding: 0 6%;
+}
+
 // ----scrollbar----
 
 /* width */
@@ -44,11 +48,11 @@ body {
 
 // ----Header----
 header {
+    display: none;
     @include flex(row, space-between, center);
     @include sizing(100vw, 80px);
     background-color: $black;
     border-bottom: 1px solid #aaaaaa73;
-    padding: 0 6%;
     position: fixed;
     .top-menu {
         width: 36%;
@@ -61,8 +65,8 @@ header {
             color: #ffffff;
             text-decoration: none;
             &:hover {
-                color: $main;
-                border-bottom: 1px solid $main;
+                color: $primary;
+                border-bottom: 1px solid $primary;
                 padding-bottom: 6px;
                 transition: all .2s ease-in-out;
             }
@@ -78,6 +82,55 @@ header {
                 fill: #eee;
                 cursor: pointer;
                 transform: scale(1.1);
+            }
+        }
+    }
+}
+
+// ----Main----
+main {
+    @include sizing(100vw, auto);
+    padding-top: 86px;
+    padding-top: 10vh;
+    color: white;
+
+    // Banner
+    #banner {
+        @include sizing(100vw, 90vh);
+        background: url("../img/home-img.jpeg");
+        background-position: center;
+        background-size: cover;
+        @include flex(column, center, start);
+
+        #banner-content {
+            width: 46%;
+            .banner-title {
+                font-size: 60px;
+                text-transform: uppercase;
+            }
+            .banner-caption {
+                color: #eee;
+                font-size: 18px;
+                line-height: 24px;
+                margin: 8px 0;
+                text-transform: capitalize;
+                font-family: 'Roboto', sans-serif;
+            }
+            .banner-btn {
+                padding: 14px 42px;
+                color: #ffffff;
+                background-color: $primary;
+                margin-top: 4px;
+                border-radius: 4px;
+                text-transform: capitalize;
+                font-size: 14px;
+                
+                &:hover {
+                    width: auto;
+                    transition: all .2s ease-in-out;
+                    cursor: pointer;
+                    letter-spacing: 2px;
+                }
             }
         }
     }
