@@ -38,9 +38,9 @@ header, #banner, #about, #menu {
 ::-webkit-scrollbar-thumb {
   background: white;
   border-radius: 14px;
+  /* Handle on hover */
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #eee;
 }
@@ -344,6 +344,9 @@ main #banner #banner-content .banner-btn:hover {
   text-transform: capitalize;
   font-size: 14px;
   border: none;
+  padding: 10px 30px;
+  font-size: 16px;
+  border-radius: 2px;
 }
 
 #menu .menu__items-container .menu__item .menu__item-btn:hover {

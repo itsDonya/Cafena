@@ -39,11 +39,10 @@ header, #banner, #about, #menu {
 ::-webkit-scrollbar-thumb {
     background: white; 
     border-radius: 14px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #eee; 
+    /* Handle on hover */
+    &:hover {
+        background: #eee; 
+    }
 }
 
 body {
@@ -204,6 +203,9 @@ main {
             }
             .menu__item-btn {
                 @include btn-form1;
+                padding: 10px 30px;
+                font-size: 16px;
+                border-radius: 2px;
                 &:hover {
                     color: black;
                 }
@@ -232,12 +234,3 @@ main {
         }
     }
 }
-
-// .menu__item:hover .menu__item-price, .menu__item:hover .original-price {
-//     color: black;
-// }
-
-// .menu__item:hover .original-price {
-//     color: black;
-//     text-decoration: 1px line-through black !important;
-// }
