@@ -8,6 +8,10 @@
   background-color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -16,13 +20,13 @@
   font-family: sans-serif;
 }
 
-header, #banner {
+header, #banner, #about, #menu {
   padding: 0 6%;
 }
 
 /* width */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
 }
 
 /* Track */
@@ -44,6 +48,7 @@ header, #banner {
 body {
   background-color: #010103;
   position: relative;
+  overflow-x: hidden;
 }
 
 header {
@@ -92,6 +97,7 @@ header ul {
 header ul a {
   color: #ffffff;
   text-decoration: none;
+  font-size: 14px;
 }
 
 header ul a:hover {
@@ -112,14 +118,13 @@ header .top-icons svg:hover {
   transition: all .2s ease-in-out;
   fill: #eee;
   cursor: pointer;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 main {
   width: 100vw;
   height: auto;
-  padding-top: 86px;
   padding-top: 10vh;
   color: white;
 }
@@ -171,6 +176,7 @@ main #banner #banner-content .banner-btn {
   border-radius: 4px;
   text-transform: capitalize;
   font-size: 14px;
+  border: none;
 }
 
 main #banner #banner-content .banner-btn:hover {
@@ -179,5 +185,205 @@ main #banner #banner-content .banner-btn:hover {
   transition: all .2s ease-in-out;
   cursor: pointer;
   letter-spacing: 2px;
+}
+
+#about .about__title {
+  color: white;
+  font-size: 36px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+#about .about__title .orange {
+  color: #d3ad7f;
+}
+
+#about .about__card {
+  width: 100%;
+  height: 56vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #13131a;
+  border-radius: 2px;
+  margin-bottom: 100px;
+}
+
+#about div {
+  width: 50%;
+  height: 100%;
+}
+
+#about div:first-child .about__card-img {
+  width: 100%;
+  height: 100%;
+}
+
+#about div:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  padding: 3rem 2rem;
+}
+
+#about div:nth-child(2) .about__card-title {
+  font-size: 32px;
+  text-transform: capitalize;
+}
+
+#about div:nth-child(2) .about__card-caption {
+  color: #ccc;
+  line-height: 28px;
+}
+
+#about div:nth-child(2) .about__card-btn {
+  padding: 14px 42px;
+  color: #ffffff;
+  background-color: #d3ad7f;
+  margin-top: 4px;
+  border-radius: 4px;
+  text-transform: capitalize;
+  font-size: 14px;
+  border: none;
+}
+
+#about div:nth-child(2) .about__card-btn:hover {
+  width: auto;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+#menu .menu__title {
+  color: white;
+  font-size: 36px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+#menu .menu__title .orange {
+  color: #d3ad7f;
+}
+
+#menu .menu__items-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(312px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+  -ms-grid-rows: (minmax(300px, 1fr))[2];
+      grid-template-rows: repeat(2, minmax(300px, 1fr));
+  grid-gap: 12px;
+}
+
+#menu .menu__items-container .menu__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #373333;
+  padding: 16px 12px;
+}
+
+#menu .menu__items-container .menu__item .menu__item-img {
+  border-radius: 50%;
+}
+
+#menu .menu__items-container .menu__item .menu__item-title {
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+#menu .menu__items-container .menu__item .menu__item-price {
+  font-size: 26px;
+}
+
+#menu .menu__items-container .menu__item .menu__item-price .original-price {
+  font-size: 14px;
+  margin-left: 4px;
+  -webkit-text-decoration: 1px line-through white;
+          text-decoration: 1px line-through white;
+}
+
+#menu .menu__items-container .menu__item .menu__item-btn {
+  padding: 14px 42px;
+  color: #ffffff;
+  background-color: #d3ad7f;
+  margin-top: 4px;
+  border-radius: 4px;
+  text-transform: capitalize;
+  font-size: 14px;
+  border: none;
+}
+
+#menu .menu__items-container .menu__item .menu__item-btn:hover {
+  width: auto;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+#menu .menu__items-container .menu__item .menu__item-btn:hover {
+  color: black;
+}
+
+#menu .menu__items-container .menu__item:hover {
+  background-color: white;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#menu .menu__items-container .menu__item:hover .menu__item-title {
+  color: black;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#menu .menu__items-container .menu__item:hover .menu__item-price, #menu .menu__items-container .menu__item .menu__item:hover .original-price {
+  color: black;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#menu .menu__items-container .menu__item:hover .original-price {
+  -webkit-text-decoration: 1px line-through black !important;
+          text-decoration: 1px line-through black !important;
+}
+
+#menu .menu__items-container .menu__item:hover .menu__item-btn {
+  color: black;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 /*# sourceMappingURL=style.css.map */

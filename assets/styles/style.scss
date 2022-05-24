@@ -7,14 +7,19 @@
     background-color: white;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    // border: 1px solid red;
 }
 
-header, #banner {
+header, #banner, #about, #menu {
     padding: 0 6%;
 }
 
@@ -22,7 +27,7 @@ header, #banner {
 
 /* width */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 4px;
 }
 
 /* Track */
@@ -44,6 +49,7 @@ header, #banner {
 body {
     background-color: $black;
     position: relative;
+    overflow-x: hidden;
 }
 
 // ----Header----
@@ -58,12 +64,14 @@ header {
         width: 36%;
     }
 
+    // Menu
     ul {
         @include flex(row, space-between, center);
         list-style: none;
         a {
             color: #ffffff;
             text-decoration: none;
+            font-size: 14px;
             &:hover {
                 color: $primary;
                 border-bottom: 1px solid $primary;
@@ -73,6 +81,7 @@ header {
         }
     }
 
+    // Icons
     .top-icons {
         svg {
             width: 18px;
@@ -81,7 +90,7 @@ header {
                 transition: all .2s ease-in-out;
                 fill: #eee;
                 cursor: pointer;
-                transform: scale(1.1);
+                transform: scale(1.2);
             }
         }
     }
@@ -90,7 +99,6 @@ header {
 // ----Main----
 main {
     @include sizing(100vw, auto);
-    padding-top: 86px;
     padding-top: 10vh;
     color: white;
 
@@ -117,21 +125,119 @@ main {
                 font-family: 'Roboto', sans-serif;
             }
             .banner-btn {
-                padding: 14px 42px;
-                color: #ffffff;
-                background-color: $primary;
-                margin-top: 4px;
-                border-radius: 4px;
-                text-transform: capitalize;
-                font-size: 14px;
-                
-                &:hover {
-                    width: auto;
-                    transition: all .2s ease-in-out;
-                    cursor: pointer;
-                    letter-spacing: 2px;
-                }
+                @include btn-form1;
             }
         }
     }
 }
+
+
+// ----About----
+#about {
+    .about__title {
+        @include titleForm;
+    }
+
+    .about__card {
+        @include sizing(100%, 56vh);
+        @include flex(row, center, center);
+        background-color: $secondary;
+        border-radius: 2px;
+        margin-bottom: 100px;
+    }
+
+    div {
+        @include sizing(50%, 100%);
+    }
+    
+    div:first-child {
+        .about__card-img {
+            @include sizing(100%, 100%);
+        }
+    }
+    div:nth-child(2) {
+        @include flex(column, space-around, start);
+        padding: 3rem 2rem;
+        .about__card-title{
+            font-size: 32px;
+            text-transform: capitalize;
+        }
+        .about__card-caption {
+            color: #ccc;
+            line-height: 28px;
+        }
+        .about__card-btn {
+            @include btn-form1;
+        }
+    }
+}
+
+// ----Menu----
+#menu {
+    .menu__title {
+        @include titleForm;
+    }
+
+    .menu__items-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+        grid-template-rows: repeat(2, minmax(300px, 1fr));
+        grid-gap: 12px;
+        .menu__item {
+            @include flex(column, space-evenly, center);
+            border: 2px solid #373333;
+            padding: 16px 12px;
+            .menu__item-img {
+                border-radius: 50%;
+            }
+            .menu__item-title {
+                font-size: 20px;
+                text-transform: capitalize;
+            }
+            .menu__item-price {
+                font-size: 26px;
+                .original-price {
+                    font-size: 14px;
+                    margin-left: 4px;
+                    text-decoration: 1px line-through white;
+                }
+            }
+            .menu__item-btn {
+                @include btn-form1;
+                &:hover {
+                    color: black;
+                }
+            }
+
+            // Hover mode
+            &:hover {
+                background-color: white;
+                transition: all 0.2s ease-in-out;
+            }
+            &:hover .menu__item-title {
+                color: black;
+                transition: all 0.2s ease-in-out;
+            }
+            &:hover .menu__item-price, .menu__item:hover .original-price {
+                color: black;
+                transition: all 0.2s ease-in-out;
+            }
+            &:hover .original-price {
+                text-decoration: 1px line-through black !important;
+            }
+            &:hover .menu__item-btn {
+                color: black;
+                transition: all 0.2s ease-in-out;
+            }
+        }
+    }
+}
+
+// .menu__item:hover .menu__item-price, .menu__item:hover .original-price {
+//     color: black;
+// }
+
+// .menu__item:hover .original-price {
+//     color: black;
+//     text-decoration: 1px line-through black !important;
+// }
