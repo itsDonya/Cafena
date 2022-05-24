@@ -19,7 +19,7 @@ html {
     // border: 1px solid red;
 }
 
-header, #banner, #about, #menu {
+header, #banner, #about, #menu, #products, #review {
     padding: 0 6%;
 }
 
@@ -130,7 +130,6 @@ main {
     }
 }
 
-
 // ----About----
 #about {
     .about__title {
@@ -230,6 +229,112 @@ main {
             &:hover .menu__item-btn {
                 color: black;
                 transition: all 0.2s ease-in-out;
+            }
+        }
+    }
+}
+// ----Products----
+#products {
+    margin-top: 4rem;
+    .products__title {
+        @include titleForm;
+    }
+    .products__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+        grid-template-rows: repeat(1, minmax(300px, 1fr));
+        grid-gap: 12px;
+        .products__product {
+            @include flex(column, space-evenly, center);
+            border: 2px solid #373333;
+            padding: 16px 12px;
+            
+            .products__product-buttons {
+                @include flex(row, space-between, center);
+                width: 40%;
+                svg {
+                    @include sizing(44px, 44px);
+                    border: 2px solid #373333;
+                    padding: 10px;
+                    margin: 20px 0;
+                    fill: white;
+                    border-radius: 2px;
+                    &:hover {
+                        background-color: $primary;
+                        transition: all .2s ease-in-out;
+                        border: 2px solid $primary;
+                    }
+                }
+            }
+            .products__product-title {
+                font-size: 24px;
+                margin: 14px 0;
+                text-transform: capitalize;
+            }
+            .products__product-stars {
+                @include flex(row, space-between, center);
+                margin: 12px;
+                svg {
+                    @include sizing(22px, 22px);
+                    fill: $primary;
+                    margin: 0 2px;
+                }
+            }
+            .products__product-price {
+                font-size: 26px;
+                .original-price {
+                    font-size: 14px;
+                    margin-left: 4px;
+                    text-decoration: 1px line-through white;
+                }
+            }
+        }
+    }
+}
+
+// Review
+#review {
+    margin-top: 4rem;
+    .review__title {
+        @include titleForm;
+    }
+    .review__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+        grid-template-rows: repeat(1, minmax(300px, 1fr));
+        grid-gap: 12px;
+        .review__review {
+            @include flex(column, space-evenly, center);
+            border: 2px solid #373333;
+            padding: 16px 12px;
+            .review__img {
+                margin: 24px 0;
+            }
+            .review__review-text {
+                width: 86%;
+                line-height: 24px;
+                font-size: 14px;
+                text-align: center;
+                font-family: 'Roboto', sans-serif;
+            }
+            .review__review-profile {
+                width: 100px;
+                border-radius: 50%;
+                margin: 10px;
+            }
+            .review__review-name {
+                font-size: 24px;
+                margin: 6px 0;
+                text-transform: capitalize;
+            }
+            .review__review-stars {
+                @include flex(row, space-between, center);
+                margin: 12px;
+                svg {
+                    @include sizing(22px, 22px);
+                    fill: $primary;
+                    margin: 0 2px;
+                }
             }
         }
     }
