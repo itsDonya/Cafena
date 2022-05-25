@@ -20,7 +20,14 @@ html {
   font-family: sans-serif;
 }
 
-header, #banner, #about, #menu, #products, #review {
+header,
+#banner,
+#about,
+#menu,
+#products,
+#review,
+#contact,
+#blogs {
   padding: 0 6%;
 }
 
@@ -599,5 +606,213 @@ main #banner #banner-content .banner-btn:hover {
   height: 22px;
   fill: #d3ad7f;
   margin: 0 2px;
+}
+
+#contact {
+  margin-top: 4rem;
+}
+
+#contact .contact__title {
+  color: white;
+  font-size: 36px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+#contact .contact__title .orange {
+  color: #d3ad7f;
+}
+
+#contact .contact__form {
+  width: 100%;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 32px 8rem;
+  background-color: #13131a;
+}
+
+#contact .contact__form .contact__form-title {
+  text-transform: uppercase;
+  font-size: 26px;
+  text-align: center;
+}
+
+#contact .contact__form div {
+  width: 96%;
+  height: 54px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px;
+  background-color: black;
+  border: 1px solid #373333;
+}
+
+#contact .contact__form div svg {
+  width: 18px;
+  height: 18px;
+  margin: 0 14px;
+  fill: white;
+}
+
+#contact .contact__form div input {
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: inherit;
+  border: none;
+}
+
+#contact .contact__form div input:focus {
+  border: none;
+  outline: none;
+}
+
+#contact .contact__form .contact__btn {
+  padding: 14px 42px;
+  color: #ffffff;
+  background-color: #d3ad7f;
+  margin-top: 4px;
+  border-radius: 4px;
+  text-transform: capitalize;
+  font-size: 14px;
+  border: none;
+  padding: 10px 30px;
+  font-size: 16px;
+  border-radius: 2px;
+}
+
+#contact .contact__form .contact__btn:hover {
+  width: auto;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+#blogs {
+  margin-top: 4rem;
+}
+
+#blogs .blogs__title {
+  color: white;
+  font-size: 36px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+#blogs .blogs__title .orange {
+  color: #d3ad7f;
+}
+
+#blogs .blogs__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(312px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+  -ms-grid-rows: (minmax(300px, 1fr))[2];
+      grid-template-rows: repeat(2, minmax(300px, 1fr));
+  grid-gap: 12px;
+}
+
+#blogs .blogs__container .blog {
+  border: 2px solid #373333;
+  overflow: hidden;
+}
+
+#blogs .blogs__container .blog:hover .blog-img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+#blogs .blogs__container .blog .blog-img {
+  width: 100%;
+  height: auto;
+}
+
+#blogs .blogs__container .blog section {
+  overflow: hidden;
+}
+
+#blogs .blogs__container .blog div {
+  padding: 16px 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+#blogs .blogs__container .blog div p, #blogs .blogs__container .blog div button {
+  margin: 10px 0;
+}
+
+#blogs .blogs__container .blog div .blog-title {
+  text-transform: capitalize;
+  font-size: 22px;
+}
+
+#blogs .blogs__container .blog div .blog-info {
+  color: #d3ad7f;
+  font-size: 18px;
+}
+
+#blogs .blogs__container .blog div .blog-text {
+  font-size: 14px;
+}
+
+#blogs .blogs__container .blog div .blog-btn {
+  padding: 14px 42px;
+  color: #ffffff;
+  background-color: #d3ad7f;
+  margin-top: 4px;
+  border-radius: 4px;
+  text-transform: capitalize;
+  font-size: 14px;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 1px;
+}
+
+#blogs .blogs__container .blog div .blog-btn:hover {
+  width: auto;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+  letter-spacing: 2px;
 }
 /*# sourceMappingURL=style.css.map */

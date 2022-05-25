@@ -19,7 +19,14 @@ html {
     // border: 1px solid red;
 }
 
-header, #banner, #about, #menu, #products, #review {
+header,
+#banner,
+#about,
+#menu,
+#products,
+#review,
+#contact,
+#blogs {
     padding: 0 6%;
 }
 
@@ -209,7 +216,7 @@ main {
                     color: black;
                 }
             }
-
+            
             // Hover mode
             &:hover {
                 background-color: white;
@@ -292,7 +299,7 @@ main {
     }
 }
 
-// Review
+// ----Review----
 #review {
     margin-top: 4rem;
     .review__title {
@@ -334,6 +341,104 @@ main {
                     @include sizing(22px, 22px);
                     fill: $primary;
                     margin: 0 2px;
+                }
+            }
+        }
+    }
+}
+
+// ----Contact----
+#contact {
+    margin-top: 4rem;
+    .contact__title {
+        @include titleForm;
+    }
+    .contact__form {
+        @include sizing(100%, 400px);
+        @include flex(column, space-between, center);
+        padding: 32px 8rem;
+        background-color: $secondary;
+        .contact__form-title {
+            text-transform: uppercase;
+            font-size: 26px;
+            text-align: center;
+        }
+        div {
+            @include sizing(96%, 54px);
+            @include flex(row, start, center);
+            padding: 8px;
+            background-color: black;
+            border: 1px solid #373333;
+            svg {
+                @include sizing(18px, 18px);
+                margin: 0 14px;
+                fill: white;
+            }
+            input {
+                @include sizing(100%, 100%);
+                color: white;
+                background-color: inherit;
+                border: none;
+                &:focus {
+                    border: none;
+                    outline: none;
+                }
+            }
+        }
+        .contact__btn {
+            @include btn-form1;
+            padding: 10px 30px;
+            font-size: 16px;
+            border-radius: 2px;
+        }
+    }
+}
+
+// ----Blogs----
+#blogs {
+    margin-top: 4rem;
+    .blogs__title {
+        @include titleForm;
+    }
+    .blogs__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+        grid-template-rows: repeat(2, minmax(300px, 1fr));
+        grid-gap: 12px;
+        .blog {
+            border: 2px solid #373333;
+            overflow: hidden;
+            &:hover .blog-img {
+                transform: scale(1.2);
+                transition: all .3s ease-in-out;
+            }
+            .blog-img {
+                @include sizing(100%, auto);
+            }
+            section {
+                overflow: hidden;
+            }
+            div {
+                padding: 16px 12px;
+                @include flex(column, space-between, start);
+                p, button {
+                    margin: 10px 0;
+                }
+                .blog-title {
+                    text-transform: capitalize;
+                    font-size: 22px;
+                }
+                .blog-info {
+                    color: $primary;
+                    font-size: 18px;
+                }
+                .blog-text {
+                    font-size: 14px;
+                }
+                .blog-btn {
+                    @include btn-form1;
+                    padding: 8px 18px;
+                    border-radius: 1px;
                 }
             }
         }
