@@ -403,7 +403,7 @@ main {
     .blogs__container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
-        grid-template-rows: repeat(2, minmax(300px, 1fr));
+        grid-template-rows: repeat(1, minmax(300px, 1fr));
         grid-gap: 12px;
         .blog {
             border: 2px solid #373333;
